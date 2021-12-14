@@ -21,9 +21,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 75vh;
+    background-color: var(--dark);
 }
 
-.rt{
+.ta-r{
     text-align: right;
 }
 
@@ -33,6 +35,7 @@ h1{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 3rem;
 }
 
 .container{
@@ -40,27 +43,38 @@ h1{
     flex-direction: column;
     align-items: center; */
 
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
 
 }
 
 .display{
-    background-color: green;
+    margin: 1.5rem 0;
+    height: 80px;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .operation{
-    background-color: lightseagreen;
+    height: 50%;
+    font-size: 20px;
+    padding: 5px 10px;
+    /* background-color: lightseagreen; */
 }
 
 .result{
-    background-color: tomato;
+    height: 50%;
+    padding: 0 10px;
+    font-size: 30px;
+    font-weight: bold;
+    /* background-color: tomato; */
 }
 
 .buttons{
     display: grid;
     grid-template-columns: auto auto auto auto;
+    gap: 10px;
 
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
 }
 
 button{
@@ -68,7 +82,8 @@ button{
     font-size: 20px;
     border-radius: 50%;
     cursor: pointer;
-    background-color: greenyellow;
+
+    background-color: lightgray;
 }
 
 #delete{
@@ -76,7 +91,8 @@ button{
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-
+    border-radius: 10px;
+    background-color: hsl(342, 47%, 58%);
 }
 
 #clear{
@@ -84,4 +100,6 @@ button{
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
+    border-radius: 10px;
+    background-color: hsl(253, 47%, 58%);
 }
