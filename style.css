@@ -1,3 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --dark: hsl(206, 74%, 6%);
+    --light: hsl(208, 100%, 97%);
+    --border: rgb(255, 196, 70);
+    --accent: rgb(240, 74, 114);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rt{
+    text-align: right;
+}
+
 h1{
-    color: red;
+    font-size: 3rem;
+    background: -webkit-linear-gradient(var(--border), var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+
+    background-color: lightgreen;
+
+}
+
+.display{
+    background-color: green;
+}
+
+.operation{
+    background-color: lightseagreen;
+}
+
+.result{
+    background-color: tomato;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+    background-color: lightslategray;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: greenyellow;
+}
+
+#delete{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+#clear{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
