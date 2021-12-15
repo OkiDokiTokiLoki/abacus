@@ -1,15 +1,16 @@
-function addition(num1, num2){
-    return num1 + num2;
+const operationDisplay = document.querySelector('.operation');
+const resultDisplay = document.querySelector('.result');
+
+const calculator = {
+    displayValue: '0',
+    firstOperand: null,
+    waitingForSecondOperand: false,
+    operator: null,
 }
 
-function subtract(num1, num2){
-    return num1 - num2;
+function updateDisplay(){
+    resultDisplay.textContent = calculator.displayValue;
 }
 
-function multiply(num1, num2){
-    return num1 * num2;
-}
+updateDisplay();
 
-function divide(num1, num2){
-    return num1 / num2;
-}
