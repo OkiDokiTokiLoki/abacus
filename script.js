@@ -9,26 +9,51 @@ const calculator = {
     operator: null,
 }
 
-function updateDisplay(){
-    resultDisplay.textContent = calculator.displayValue;
-}
+// function updateDisplay(){
+//     resultDisplay.textContent = calculator.displayValue;
+// }
 
-updateDisplay();
+// updateDisplay();
 
 
 
 buttons.map(button => {
     button.addEventListener('click', (e) => {
-        console.log('clicked');
-        console.log(e);
-        console.log(e.target);
-        console.log(e.target.innerText);
+        switch (e.target.innerText){
+            case 'C':
+                if(operationDisplay.innerText){
+                    operationDisplay.innerText = operationDisplay.innerText.slice(0,-1);
+                }
+                break;
+            case 'AC':
+                operationDisplay.innerText = '';
+                break;
+            default:
+                operationDisplay.innerText += e.target.innerText;
+        }
     })
 })
 
 
 
 
+
+// buttons.map(button => {
+//     button.addEventListener('click', (e) => {
+//         switch (e.target.innerText){
+//             case 'AC':
+//                 operationDisplay.innerText = '';
+//                 break;
+//             case 'C':
+//                 if(operationDisplay.innerText){
+//                     operationDisplay.innerText = operationDisplay.innerText.slice(0,-1);
+//                 }
+//                 break;
+//             default:
+//                 operationDisplay.innerText += e.target.innerText;
+//         }
+//     })
+// })
 
 
 
