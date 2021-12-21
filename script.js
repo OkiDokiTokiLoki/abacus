@@ -1,3 +1,15 @@
+const calculator = document.querySelector('.calculator');
+const buttons = calculator.querySelector('.buttons');
+const operationDisplay = document.querySelector('.operation');
+const resultDisplay = document.querySelector('.result');
+const operatorKeys = buttons.querySelectorAll('[data-type="operator"]');
+
+buttons.addEventListener('click', event => {
+  if (!event.target.closest('button')) return;
+
+  console.log('hello world');
+});
+
 function operate (firstNumber, operator, secondNumber) {
   firstNumber = parseInt(firstNumber);
   secondNumber = parseInt(secondNumber);
