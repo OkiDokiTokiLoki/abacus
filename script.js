@@ -7,7 +7,21 @@ const operatorKeys = buttons.querySelectorAll('[data-type="operator"]');
 buttons.addEventListener('click', event => {
   if (!event.target.closest('button')) return;
 
-  console.log('hello world');
+  const key = event.target;
+  const keyValue = key.textContent;
+  const displayValue = operationDisplay.textContent;
+  const { type } = key.dataset;
+
+
+  if (type === 'number') {
+    if (displayValue === '0') {
+      operationDisplay.textContent = keyValue
+    } else {
+      operationDisplay.textContent = displayValue + keyValue
+    }
+  }
+
+  
 });
 
 function operate (firstNumber, operator, secondNumber) {
