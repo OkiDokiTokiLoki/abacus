@@ -1,8 +1,8 @@
 const calculator = document.querySelector('.calculator');
 const buttons = calculator.querySelector('.buttons');
+const operatorKeys = buttons.querySelectorAll('[data-type="operator"]');
 const operationDisplay = document.querySelector('.operation');
 const resultDisplay = document.querySelector('.result');
-const operatorKeys = buttons.querySelectorAll('[data-type="operator"]');
 
 buttons.addEventListener('click', event => {
   if (!event.target.closest('button')) return;
@@ -11,17 +11,43 @@ buttons.addEventListener('click', event => {
   const keyValue = key.textContent;
   const displayValue = operationDisplay.textContent;
   const { type } = key.dataset;
-
+  const { previousKeyType } = calculator.dataset;
 
   if (type === 'number') {
-    if (displayValue === '0') {
-      operationDisplay.textContent = keyValue
+      if (displayValue === '0' || previousKeyType === 'operator') {
+      operationDisplay.textContent = keyValue;
     } else {
-      operationDisplay.textContent = displayValue + keyValue
+      operationDisplay.textContent = displayValue + keyValue;
     }
-  }
+  };
 
-  
+  if (type === 'operator') {
+    operatorKeys.forEach(element => { element.dataset.state = '' })
+    key.dataset.state = 'selected';
+
+    calculator.dataset.firstNumber = displayValue;
+    calculator.dataset.operator = key.dataset.key;
+  };
+
+  if (type === 'equal') {
+    const firstNumber = calculator.dataset.firstNumber;
+    const operator = calculator.dataset.operator;
+    const secondNumber = displayValue;
+    resultDisplay.textContent = operate(firstNumber, operator, secondNumber);
+  };
+
+  if (type === 'clear') {
+    operationDisplay.textContent = '';
+    resultDisplay.textContent = '0';
+    delete calculator.dataset.firstNumber;
+    delete calculator.dataset.operator;
+  };
+
+  if (type === 'delete'){
+    operationDisplay.textContent = operationDisplay.textContent.slice(0,-1);
+  };
+
+  calculator.dataset.previousKeyType = type;
 });
 
 function operate (firstNumber, operator, secondNumber) {
@@ -30,6 +56,6 @@ function operate (firstNumber, operator, secondNumber) {
 
   if (operator === 'plus') return firstNumber + secondNumber;
   if (operator === 'minus') return firstNumber - secondNumber;
-  if (operator === 'times') return firstNumber * secondNumber;
+  if (operator === 'multiply') return firstNumber * secondNumber;
   if (operator === 'divide') return firstNumber / secondNumber;
 }
