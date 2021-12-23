@@ -12,8 +12,8 @@
 :root{
     --dark: hsl(206, 74%, 6%);
     --light: hsl(208, 100%, 97%);
-    --border: rgb(255, 196, 70);
-    --accent: rgb(240, 74, 114);
+    --pink: hsl(342, 47%, 58%);
+    --purple: hsl(253, 47%, 58%);
 }
 
 body{
@@ -31,21 +31,13 @@ body{
 
 h1{
     font-size: 3rem;
-    background: -webkit-linear-gradient(var(--border), var(--accent));
+    color: var(--light);
+    background: -webkit-linear-gradient(var(--purple), var(--pink));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 3rem;
 }
-
-/*calculator{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: lightgreen;
-
-}*/
 
 .display{
     margin: 1.5rem 0;
@@ -58,7 +50,6 @@ h1{
     height: 50%;
     font-size: 20px;
     padding: 5px 10px;
-    /* background-color: lightseagreen; */
 }
 
 .result{
@@ -66,15 +57,12 @@ h1{
     padding: 0 10px;
     font-size: 30px;
     font-weight: bold;
-    /* background-color: tomato; */
 }
 
 .buttons{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-
-    /* background-color: lightslategray; */
 }
 
 button{
@@ -92,7 +80,7 @@ button{
     grid-row-start: 1;
     grid-row-end: 2;
     border-radius: 10px;
-    background-color: hsl(342, 47%, 58%);
+    background-color: var(--pink)
 }
 
 .clear{
@@ -101,5 +89,5 @@ button{
     grid-row-start: 1;
     grid-row-end: 2;
     border-radius: 10px;
-    background-color: hsl(253, 47%, 58%);
+    background-color: var(--purple);
 }
