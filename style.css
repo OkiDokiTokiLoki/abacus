@@ -74,6 +74,10 @@ button{
     background-color: lightgray;
 }
 
+button[data-type='operator']:focus{
+    background-image: linear-gradient(var(--purple), var(--pink));
+}
+
 .delete{
     grid-column-start: 1;
     grid-column-end: 3;

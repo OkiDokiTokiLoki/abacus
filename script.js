@@ -39,8 +39,6 @@ buttons.addEventListener('click', event => {
     resultDisplay.textContent = operate(firstNumber, operator, secondNumber);
   };
 
-  //key.dataset.operand
-
   if (type === 'clear') {
     operationDisplay.textContent = '';
     resultDisplay.textContent = '0';
