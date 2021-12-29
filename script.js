@@ -27,14 +27,19 @@ buttons.addEventListener('click', event => {
 
     calculator.dataset.firstNumber = displayValue;
     calculator.dataset.operator = key.dataset.key;
+    calculator.dataset.operand = key.dataset.operand;
   };
 
   if (type === 'equal') {
     const firstNumber = calculator.dataset.firstNumber;
     const operator = calculator.dataset.operator;
+    const operand = calculator.dataset.operand;
     const secondNumber = displayValue;
+    operationDisplay.textContent = `${firstNumber} ${operand} ${secondNumber}`;
     resultDisplay.textContent = operate(firstNumber, operator, secondNumber);
   };
+
+  //key.dataset.operand
 
   if (type === 'clear') {
     operationDisplay.textContent = '';
