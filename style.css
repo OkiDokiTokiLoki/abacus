@@ -95,3 +95,21 @@ button[data-type='operator']:focus{
     border-radius: 10px;
     background-color: var(--purple);
 }
+
+footer{
+    position: absolute;
+    bottom: 100px;
+}
+
+footer p{
+    color: white;
+}
+
+footer a{
+    color: var(--pink);
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: var(--purple);
+}
